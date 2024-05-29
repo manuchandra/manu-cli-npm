@@ -10,8 +10,8 @@ jobs:
   build:
      runs-on: ubuntu-latest
      env:
-      OIDC_AUDIENCE: 'jfrog-github'
-      OIDC_PROVIDER: 'github-oidc'
+      OIDC_AUDIENCE: 'manu-oidc'
+      OIDC_PROVIDER: 'github-manu'
       PLATFORM_REPO: 'manu-npm-virtual'
      defaults:
       run:
