@@ -10,8 +10,8 @@ jobs:
   build:
      runs-on: ubuntu-latest
      env:
-      OIDC_AUDIENCE: 'manuc-oidc'
-      OIDC_PROVIDER: 'github-manu'
+      OIDC_AUDIENCE: 'manuc-group'
+      OIDC_PROVIDER: 'github-group'
       PLATFORM_REPO: 'manu-npm-virtual'
      steps:
        - name: Checkout
