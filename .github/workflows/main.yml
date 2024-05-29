@@ -10,7 +10,7 @@ jobs:
   build:
      runs-on: ubuntu-latest
      env:
-      OIDC_AUDIENCE: 'manu-oidc'
+      OIDC_AUDIENCE: 'manu1-oidc'
       OIDC_PROVIDER: 'github-manu'
       PLATFORM_REPO: 'manu-npm-virtual'
      steps:
