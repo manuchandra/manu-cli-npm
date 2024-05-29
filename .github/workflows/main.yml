@@ -10,8 +10,8 @@ jobs:
   build:
      runs-on: ubuntu-latest
      env:
-      OIDC_AUDIENCE: 'github-oidc'
-      OIDC_PROVIDER: 'jfrog-github'
+      OIDC_AUDIENCE: 'github-manu'
+      OIDC_PROVIDER: 'manu-oidc'
       PLATFORM_REPO: 'manu-npm-virtual'
      steps:
        - name: Checkout
