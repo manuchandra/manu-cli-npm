@@ -27,7 +27,7 @@ jobs:
               env:
                  OIDC_AUDIENCE: 'grpapi'
                  OIDC_PROVIDER: 'manu-grpapi'
-                 JFROG_PLATFORM_URL: https://hts2.jfrog.io
+                 JFROG_PLATFORM_URL: 'https://hts2.jfrog.io'
               run: |
                     RESPONSE=$(curl -s -o response.json -w "%{http_code}" -X POST -H "Content-type: application/json" \ 
                     ${{ env.JFROG_PLATFORM_URL}}/access/api/v1/oidc/token -d \
