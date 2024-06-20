@@ -23,5 +23,10 @@ jobs:
               run: |
                     ACCESS_TOKEN=$(curl -XPOST -H "Content-Type: application/json" "https://hts2.jfrog.io/access/api/v1/oidc/token" -d "{\"grant_type\": \"urn:ietf:params:oauth:grant-type:token-exchange\", \"subject_token_type\":\"urn:ietf:params:oauth:token-type:id_token\", \"subject_token\": \"${ID_TOKEN}\", \"provider_name\": \"manu-grpapi\"}" | jq .access_token | tr -d '"')
                     echo "ACCESS_TOKEN=${ACCESS_TOKEN}" >> $GITHUB_ENV
-            
-            
+            - name: list token
+              run: |
+                    RESPONSE=$(curl -s -o response.json -w "%{http_code}" -X POST -H "Content-type: application/json" \ 
+                    ${{ env.JFROG_URL }}/access/api/v1/oidc/token -d \
+                    '{"grant_type": "urn:ietf:params:oauth:grant-type:token-exchange","subject_token_type":"urn:ietf:params:oauth:token-type:id_token","subject_token": "${{ env.ID_TOKEN }}","provider_name": "${{ env.OIDC_PROVIDER }}"}')        
+                    echo "API Response:"
+                    echo "$RESPONSE"
